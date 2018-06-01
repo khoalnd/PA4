@@ -1,0 +1,245 @@
+<html ng-app="Lyrics">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" href="style/icon/favicon.ico">
+        <title>My Lyrics</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--AngularJS-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--Firebase-->
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+        <!--Call Angular Controller-->
+        <script type="text/javascript" src="js/route/route.js"></script>
+        <script type="text/javascript" src="js/controller/search.js"></script>
+        <script type="text/javascript" src="js/controller/main.js"></script>
+        <script type="text/javascript" src="js/controller/lyrics.js"></script>
+        <script type="text/javascript" src="js/firebase.js"></script>
+        <script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+        <script type="text/javascript" src="js/ng-ckeditor.min.js"></script>
+
+        <div class="fit-vids-style" id="fit-vids-style" style="display: none;">&shy;
+            <style>
+                .fluid-width-video-wrapper {
+                    width: 100%;
+                    position: relative;
+                    padding: 0;
+                }
+
+                .fluid-width-video-wrapper iframe,
+                .fluid-width-video-wrapper object,
+                .fluid-width-video-wrapper embed {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            </style>
+        </div>
+        <style type="text/css">
+            img.wp-smiley,
+            img.emoji {
+                display: inline !important;
+                border: none !important;
+                box-shadow: none !important;
+                height: 1em !important;
+                width: 1em !important;
+                margin: 0 .07em !important;
+                vertical-align: -0.1em !important;
+                background: none !important;
+                padding: 0 !important
+            }
+        </style>
+        <link rel="stylesheet" id="contact-form-7-group-css" href="style/css/themes_reponsive.css" type="text/css" media="all">
+        <link rel="stylesheet" id="redux-google-fonts-theme_prefix-css" href="http://fonts.googleapis.com/css?family=PT+Sans%3A400%2C700%2C400italic%2C700italic%7COswald%3A300%2C400%2C700&amp;ver=1517317975" type="text/css" media="all">
+        
+        <style type="text/css">
+            a:hover,
+            cite,
+            .post-format-icon,
+            var,
+            .big-letter h1,
+            .post-materials ul li i,
+            .post-paginate p,
+            .sf-menu li a:hover,
+            .sf-menu .menu-item-has-children:hover:before,
+            .lyric-alphabet ul li a:hover,
+            .popular-lyrics .title h3 i,
+            .latest-lyrics-container h3 i,
+            .lyric-print a,
+            .lyrics-title h3 a,
+            .same-album a {
+                color: #e4422e !important
+            }
+
+            q,
+            blockquote {
+                border-left: #e4422e !important
+            }
+
+            kbd,
+            .button,
+            .sidebar-widget hr,
+            .searchform input[type="submit"],
+            .post-password-form input[type="submit"],
+            .contact-form-style input[type="submit"],
+            .wpcf7 input[type="submit"],
+            .submit-lyric {
+                background: #e4422e !important
+            }
+
+            body {
+                background: #f5f5f5 !important
+            }
+
+            body {
+                font-family: PT Sans !important;
+                font-size: 14px;
+                line-height: 24px
+            }
+
+            ::-webkit-input-placeholder {
+                font-family: PT Sans !important;
+                font-size: 14px;
+                line-height: 24px
+            }
+
+            :-moz-placeholder {
+                font-family: PT Sans !important;
+                font-size: 14px;
+                line-height: 24px
+            }
+
+            ::-moz-placeholder {
+                font-family: PT Sans !important;
+                font-size: 14px;
+                line-height: 24px
+            }
+
+            :-ms-input-placeholder {
+                font-family: PT Sans !important;
+                font-size: 14px;
+                line-height: 24px
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: Oswald !important
+            }
+            .count-view {
+                font-size: 18px;
+                float: right;
+                position: relative;
+                cursor: pointer;
+                font-weight: 500;
+            }
+            .count-view b.ico {
+                display: inline-block;
+                background: url(/image/player_icon.png) 0 -1785px no-repeat;
+                background-size: 50px 3809px;
+                width: 25px;
+                height: 25px;
+                text-indent: -9999px;
+                vertical-align: middle;
+            }
+        </style>
+        <style type="text/css">
+            .recentcomments a {
+                display: inline !important;
+                padding: 0 !important;
+                margin: 0 !important
+            }
+        </style>
+        <style type="text/css" title="dynamic-css" class="options-output">
+            h2.site-description {
+                font-family: "PT Sans";
+                line-height: 24px;
+                font-weight: 400;
+                font-size: 14px
+            }
+
+            h2.site-description {
+                font-family: Oswald
+            }
+        </style>
+    </head>
+
+    <body class="home page-template page-template-homepage page-template-homepage-php page page-id-1784">
+        <div class="slicknav_menu">
+            <a href="#" aria-haspopup="true" tabindex="0" class="slicknav_btn slicknav_collapsed" style="">
+                <div class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></div>
+            </a>
+            <ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1784 current_page_item"><a href="/muusico/" role="menuitem" tabindex="-1">Home</a></li>
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="/muusico/about-2/" role="menuitem" tabindex="-1">About</a></li>
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="/muusico/artists/" role="menuitem" tabindex="-1">Artists</a></li>
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="/muusico/albums/" role="menuitem" tabindex="-1">Albums</a></li>
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="/muusico/genres/" role="menuitem" tabindex="-1">Genres</a></li>
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="/muusico/blog/" role="menuitem" tabindex="-1">News</a></li>
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="/muusico/contact/" role="menuitem" tabindex="-1">Contact</a></li>
+            </ul>
+        </div>
+
+        <div id="wrapper" class="fitvids">
+            <!--Header-->
+            <div class="lyric-home" style="background-size:cover;">
+                <div class="blog-back"></div>
+
+                <div class="lyric-search" ng-controller="searchCtrl">
+                    <div class="container pos-center">
+                        <h1>Search 386 Song Lyrics</h1>
+                        <div class="lyric-search-input">
+                            <form role="search">
+                                <div class="search-wrapper clearfix">
+                                    <div class="pull-left lsearchl">
+                                        <input class="lisinput" type="search" placeholder="Search: Enter lyrics name keywords hit enter" ng-model=txtSearch ng-keyup="complete(txtSearch)">
+                                        <!-- <input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" />   -->
+                                    </div>
+                                    
+                                    <div class="pull-left lsearchr"><label for="SongSearch" class="slabel" ng-click="search()"><i class="fa fa-search"></i></label><input id="SongSearch" type="submit" value="" style="display:none;"></div>
+                                    <div class="searchcats">
+                                        <ul>
+                                            <li><input type="radio" value="lyrics" checked="">Lyrics</li>
+                                            <li><input type="radio" value="album">Albums</li>
+                                            <li><input type="radio" value="artist">Artists</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header-->
+
+            <div class="container content-capsule">
+                <div class="content-pull">
+                    <div ng-view></div>
+
+                    <div class="footer clearfix">
+                        <!--Footer-->
+                        <div class="pull-right footer-menu"></div>
+                        <!--Footer-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="su-footer-links" style="text-align: center;"></div>
+
+        <script>
+            $('.blog-back').load('./view/header.html');
+            $('.footer-menu').load('./view/footer.html');
+        </script>
+    </body>
+</html>

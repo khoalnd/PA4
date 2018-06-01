@@ -1,0 +1,59 @@
+<div class="page-container clearfix" ng-controller="ctrlLyrics">
+    <div class="container">
+        <div class="second-container padding-in clearfix" style="min-height: 185px;">
+            <div class="row">
+                <div class="col-lg-8 col-sm-8 col-sm-8 col-lg-offset-2 col-sm clearfix">
+                    <div id="user-submitted-posts">
+                        <div>
+                            <div id="usp-submit">
+                                <input class="exclude" name="user-submitted-post" id="user-submitted-post" type="submit" value="Clear" ng-click="clear()" />
+                            </div>
+                            <div id="usp-error-message" class="usp-callout-failure usp-hidden"></div>
+                            <div id="usp-success-message" class="usp-callout-success usp-hidden"></div>
+                            <fieldset class="usp-title">
+                                <label for="user-submitted-title">Lyrics Title</label>
+                                <input name="user-submitted-title" type="text" value="" data-required="true" required="" class="usp-input" ng-model="iTitle">
+                            </fieldset>
+                            <fieldset class="selectize-field">
+                                <label for="theme2035-artist-name">Artist Name</label>
+                                <input name="user-submitted-title" type="text" value="" data-required="true" required="" class="usp-input" ng-model="iSinger">
+                            </fieldset>
+                            <fieldset class="selectize-field">
+                                <label for="theme2035-artist-name">Albulms Name</label>
+                                <input name="user-submitted-title" type="text" value="" data-required="true" required="" class="usp-input" ng-model="iAlbums">
+                            </fieldset>
+                            <fieldset class="selectize-field">
+                                <label for="theme2035-artist-name">Lyrics</label>
+                            </fieldset>
+                            <textarea ng-model="iLyrics" data-ck-editor></textarea>
+                            <fieldset class="usp-content">
+                                <label for="user-submitted-content">Music Theory</label>
+                                <input type="file" class="usp-input" />
+                            </fieldset>
+                            <fieldset class="usp-content">
+                                <label for="user-submitted-content">Music Audio</label>
+                                <input type="file" class="usp-input" />
+                            </fieldset>
+                            <fieldset class="usp-content">
+                                <label for="user-submitted-content">Tutorial</label>
+                                <input type="file" class="usp-input" />
+                            </fieldset>
+                            <fieldset class="usp-name">
+                                <label for="user-submitted-name">Your Name</label>
+                                <input name="user-submitted-name" type="text" value="" data-required="true" required="" class="usp-input" ng-model='iPoster'></fieldset>
+                            <div id="usp-submit">
+                                <input class="exclude" name="user-submitted-post" id="user-submitted-post" type="submit" value="Submit Lyric" ng-click="submit()" />
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        (function() {
+                            var e = document.getElementById('coldform_verify');
+                            if (e) e.parentNode.removeChild(e);
+                        })();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

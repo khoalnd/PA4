@@ -1,0 +1,38 @@
+<div class="page-container clearfix" ng-controller="searchCtrl">
+    <div class="container">
+        <div class="second-container second-padding clearfix" style="min-height: 185px;">
+            <div class="row margint10 marginb10">
+                <div class="col-lg-8 col-sm-8 col-sm-8 col-lg-offset-2 col-sm">
+                    <div class="album-line clearfix margint10">
+                        <div class="col-lg-6 col-sm-6 col-xs-6">
+                            <div class="table-title">Song Name</div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-xs-3">
+                            <div class="table-title">Album Name</div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-xs-3">
+                            <div class="table-title">Artist</div>
+                        </div>
+                    </div>
+                    <div class="list-line margint10 clearfix" ng-repeat="(key, lyrics) in listLyrics">
+                        <div class="col-lg-6 col-sm-6 col-xs-6"><a href="#!/lyrics?SongId={{ lyrics.key }}">{{ lyrics.data.SongName }}</a></div>
+                        <div class="col-lg-3 col-sm-3 col-xs-3"><a href="#!">{{ lyrics.data.AlbumName }}</a></div>
+                        <div class="col-lg-3 col-sm-3 col-xs-3"><a href="#!">{{ lyrics.data.Singer }}</a></div>
+                    </div>
+                    <!--
+                    <div class="row margint40">
+                        <div class="col-lg-12">
+                            <div class="custom-pagination">
+                                <ul class="clearfix">
+                                    <li class="active col-lg-offset-5"><a href="/muusico/?s=All+Day&amp;post_type=lyrics">1</a></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

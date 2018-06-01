@@ -1,0 +1,118 @@
+<div class="height-capsule" style="min-height: 48px;" ng-controller="ctrlMain">
+    <!--Popular lyrics-->
+    <div class="popular-lyrics-container clearfix"></div>
+    <!--End Popular lyrics-->
+
+
+    <!--Last News-->
+    <div class="latestnews container"></div>
+    <!--End Last News-->
+
+    <div class="container">
+        <!--Latest Lyrics-->
+        <div class="latest-lyrics-container clearfix">
+            <div class="title">
+                <h3><i class="fa fa-clock-o"></i>LATEST LYRICS</h3>
+            </div>
+
+            <div class="latest-lyrics margint10">
+                <ul>
+                    <!--
+                    <li>
+                        <span class="song-number">1.</span>
+                        <h5><a href="/muusico/artist/michael-jackson-3/">Michael Jackson</a></h5>
+                        <a href="/muusico/lyrics/smooth-criminal-3/">Smooth Criminal</a></li>
+                    <li>
+                        <span class="song-number">2.</span>
+                        <h5><a href="/muusico/artist/jessie-j/">Jessie J</a>ft. <a href="/muusico/artist/rihanna/">Rihanna</a></h5>
+                        <a href="#!/lyrics">All Day</a></li>
+                    <li>
+                        <span class="song-number">3.</span>
+                        <h5><a href="/muusico/artist/fergie/">Fergie</a></h5>
+                        <a href="/muusico/lyrics/lucky/">Lucky</a></li>
+                    <li>
+                        <span class="song-number">4.</span>
+                        <h5><a href="/muusico/artist/christina-aguilera/">Christina Aguilera</a></h5>
+                        <a href="/muusico/lyrics/fix-you/">Fix You</a></li>
+                    <li>
+                        <span class="song-number">5.</span>
+                        <h5><a href="/muusico/artist/demi-lovato/">Demi Lovato</a></h5>
+                        <a href="/muusico/lyrics/a-sky-full-of-stars/">A Sky Full of Stars</a></li>
+                    <li>
+                        <span class="song-number">6.</span>
+                        <h5><a href="/muusico/artist/enrique-iglesias/">Enrique Iglesias</a></h5>
+                        <a href="/muusico/lyrics/break-free/">Break Free</a></li>
+                    <li>
+                        <span class="song-number">7.</span>
+                        <h5><a href="/muusico/artist/nicki-minaj/">Nicki Minaj</a></h5>
+                        <a href="/muusico/lyrics/super-bass-2/">Super Bass</a></li>
+                    <li>
+                        <span class="song-number">8.</span>
+                        <h5><a href="/muusico/artist/iggy-azalea/">Iggy Azalea</a></h5>
+                        <a href="/muusico/lyrics/part-of-your-world/">Part Of Your World</a></li>
+                    <li>
+                        <span class="song-number">9.</span>
+                        <h5><a href="/muusico/artist/nicki-minaj/">Nicki Minaj</a></h5>
+                        <a href="/muusico/lyrics/anaconda-3/">Anaconda</a></li>
+                    <li>
+                        <span class="song-number">10.</span>
+                        <h5><a href="/muusico/artist/hozier/">Hozier</a></h5>
+                        <a href="/muusico/lyrics/one-last-time/">One Last Time</a></li>
+                    <li>
+                        <span class="song-number">11.</span>
+                        <h5><a href="/muusico/artist/ed-sheeran/">Ed Sheeran</a></h5>
+                        <a href="/muusico/lyrics/a-team/">A Team</a></li>
+                    <li>
+                        <span class="song-number">12.</span>
+                        <h5><a href="/muusico/artist/lana-del-rey/">Lana Del Rey</a></h5>
+                        <a href="/muusico/lyrics/demons/">Demons</a></li>
+                    <li>
+                        <span class="song-number">13.</span>
+                        <h5><a href="/muusico/artist/jessie-j/">Jessie J</a></h5>
+                        <a href="/muusico/lyrics/price-tag-2/">Price Tag</a></li>
+                    <li>
+                        <span class="song-number">14.</span>
+                        <h5><a href="/muusico/artist/taylor-swift/">Taylor Swift</a></h5>
+                        <a href="/muusico/lyrics/shake-it-off-2/">Shake It Off</a></li>
+                    <li>
+                        <span class="song-number">15.</span>
+                        <h5><a href="/muusico/artist/jessie-j/">Jessie J</a></h5>
+                        <a href="/muusico/lyrics/boom-clap/">Boom Clap</a></li>
+                    <li>
+                        <span class="song-number">16.</span>
+                        <h5><a href="/muusico/artist/adele/">Adele</a></h5>
+                        <a href="/muusico/lyrics/someone-like-you-2/">Someone Like You</a></li>
+                    <li>
+                        <span class="song-number">17.</span>
+                        <h5><a href="/muusico/artist/taylor-swift/">Taylor Swift</a></h5>
+                        <a href="/muusico/lyrics/style-2/">Style</a></li>
+                    <li>
+                        <span class="song-number">18.</span>
+                        <h5><a href="/muusico/artist/sia/">Sia</a></h5>
+                        <a href="/muusico/lyrics/chandelier-3/">Chandelier</a></li>
+                    <li>
+                        <span class="song-number">19.</span>
+                        <h5><a href="/muusico/artist/sia/">Sia</a></h5>
+                        <a href="/muusico/lyrics/chandelier-2/">The Hanging Tree</a></li>
+                    <li>
+                        <span class="song-number">20.</span>
+                        <h5><a href="/muusico/artist/maroon-5/">Maroon 5</a></h5>
+                        <a href="/muusico/lyrics/sugar-2/">Sugar</a></li>
+                    <li>
+                        <span class="song-number">21.</span>
+                        <h5><a href="/muusico/artist/ed-sheeran/">Ed Sheeran</a></h5>
+                        <a href="/muusico/lyrics/thinking-out-loud-2/">Thinking Out Loud</a>
+                    </li>
+                    -->
+
+                    <li ng-repeat="(key, lyrics) in listLyrics">
+                        <span class="song-number">{{ $index + 1 }}.</span>
+                        <h5><a href="#!">{{ lyrics.Singer }}</a></h5>
+                        <a href="#!/lyrics?SongId={{ key }}">{{ lyrics.SongName }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--End Latest Lyrics-->
+    </div>
+</div>
