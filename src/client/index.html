@@ -204,7 +204,9 @@
                                 <div class="search-wrapper clearfix">
                                     <div class="pull-left lsearchl">
                                         <input class="lisinput" type="search" placeholder="Search: Enter lyrics name keywords hit enter" ng-model=txtSearch ng-keyup="complete(txtSearch)">
-                                        <!-- <input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" />   -->
+                                        <ul class="list-group" ng-model='nHide' ng-hide="nHide">
+                                            <li class="list-group-item" ng-repeat="lyric in filterLyrics track by $index"><a href="javascript:void(0);" ng-click="search(lyric)">{{ lyric }}</a></li>
+                                        </ul>
                                     </div>
                                     
                                     <div class="pull-left lsearchr"><label for="SongSearch" class="slabel" ng-click="search()"><i class="fa fa-search"></i></label><input id="SongSearch" type="submit" value="" style="display:none;"></div>
