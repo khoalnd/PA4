@@ -64,6 +64,13 @@ function ctrlLyrics($sce, $scope, $rootScope, $http, firebase, $firebaseObject) 
 			$scope.clear();
 			alert('Submit Lyrics Success');
 		});
-        
 	}
+
+	$(function(){
+		let position = $('.marginb40').width();
+        $('.social').css('right', $(window).width() - position);
+        $('html, body').animate({
+			scrollTop: $('#index').offset().top
+		}, 200);
+    });
 }

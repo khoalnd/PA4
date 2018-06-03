@@ -1,5 +1,17 @@
 <div class="page-container clearfix" ng-controller="ctrlLyrics">
     <div class="container">
+        <div class="social" style="position: fixed; right: 0;">
+            <div class="pull-right">
+                <h4>SHARE</h4>
+                <span class="lyric-share">
+                    <ul>
+                        <li><a href="#!" onclick="javascript:void(0)" target="_blank" title="Share On Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li style="float: left; display: inline-block; clear: both; margin-top: 3px;"><a href="#!" onclick="javascript:void(0)" target="_blank" title="Share On Twitter"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+
         <div class="second-container second-padding clearfix" style="min-height: 185px;">
             <div class="row marginb40">
                 <div class="col-lg-8 col-sm-8 col-lg-offset-2 col-sm-offset-2 clearfix">
@@ -17,7 +29,7 @@
                             </div>
                         </h1>
                         </br>
-                        <div class="lyric-line margint10 clearfix">
+                        <div id="index" class="lyric-line margint10 clearfix">
                             <div class="pull-left">
                                 <h4>LYRIC</h4>
                             </div>
@@ -96,11 +108,8 @@
                         </div>
                         <div class="lyric-bottom clearfix">
                             <div class="pull-left">
-                                <span class="pull-left added"><p>Added by</p></span><span class="pull-left"><h3>{{ iSong.Poster }}</h3></span></div>
-                            <div class="pull-right">
-                                <span class="pull-left"><h4>SHARE</h4></span>
-                                <span class="pull-right lyric-share"><ul><li><a href="http://www.facebook.com/sharer.php?u=/muusico/lyrics/all-day/&amp;t=All Day" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share On Facebook"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/share?url=/muusico/lyrics/all-day/&amp;text=All Day" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share On Twitter"><i class="fa fa-twitter"></i></a></li></ul>
-                            </span></div>
+                                <span class="pull-left added"><p>Added by</p></span><span class="pull-left"><h3>{{ iSong.Poster }}</h3></span>
+                            </div>
                         </div>
                     </article>
                     <div class="lyric-comment margint10">

@@ -5,9 +5,6 @@
                 <div class="col-lg-8 col-sm-8 col-sm-8 col-lg-offset-2 col-sm clearfix">
                     <div id="user-submitted-posts">
                         <div>
-                            <div id="usp-submit">
-                                <input class="exclude" name="user-submitted-post" id="user-submitted-post" type="submit" value="Clear" ng-click="clear()" />
-                            </div>
                             <div id="usp-error-message" class="usp-callout-failure usp-hidden"></div>
                             <div id="usp-success-message" class="usp-callout-success usp-hidden"></div>
                             <fieldset class="usp-title">
@@ -42,6 +39,7 @@
                                 <label for="user-submitted-name">Your Name</label>
                                 <input name="user-submitted-name" type="text" value="" data-required="true" required="" class="usp-input" ng-model='iPoster'></fieldset>
                             <div id="usp-submit">
+                                <input class="exclude" name="user-submitted-post" id="user-submitted-post" type="submit" value="Clear" ng-click="clear()" style="margin: 5px;" />
                                 <input class="exclude" name="user-submitted-post" id="user-submitted-post" type="submit" value="Submit Lyric" ng-click="submit()" />
                             </div>
                         </div>
